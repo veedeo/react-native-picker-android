@@ -156,6 +156,7 @@ export default class PickerAndroid extends Component{
 
 	componentWillMount(){
 		this._panResponder = PanResponder.create({
+			onPanResponderTerminationRequest: (evt, gestureState) => false,
 			onMoveShouldSetPanResponder: (evt, gestureState) => true,
 			onMoveShouldSetPanResponderCapture: (evt, gestureState) => true,
 			onPanResponderRelease: this._handlePanResponderRelease.bind(this),
